@@ -2,17 +2,21 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 import os
+
+
+
 # Page Configuration
 st.set_page_config(
     page_title="Disease Outbreak Prediction System",
     layout="wide",
     page_icon="🏥"
 )
-working_dir = os.path.dirname(os.path.abspath(__file__))
+
+#Disclaimer
+st.warning("⚠️ This is just a prediction model. Consult a doctor for accurate diagnosis.")
 
 # Load Machine Learning Models
-
-
+working_dir = os.path.dirname(os.path.abspath(__file__))
 diabetes_model = pickle.load(open(f'{working_dir}/trained_models/diabetes_model.sav', 'rb'))
 heart_disease_model = pickle.load(open(f'{working_dir}/trained_models/heart_disease_model.sav', 'rb'))
 parkinsons_model = pickle.load(open(f'{working_dir}/trained_models/parkinson_model.sav', 'rb'))
