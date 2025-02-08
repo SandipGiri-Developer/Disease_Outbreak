@@ -1,24 +1,22 @@
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
-
+import os
 # Page Configuration
 st.set_page_config(
     page_title="Disease Outbreak Prediction System",
     layout="wide",
     page_icon="🏥"
 )
+working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Load Machine Learning Models
-MODEL_PATHS = {
-    "Diabetes": r'C:\Users\ssgir\OneDrive\Desktop\project\Disease outbreak\training_models\diabetes_model.sav',
-    "Heart Disease": r'../training_models/heart_disease_model',
-    "Parkinson’s": r'C:\Users\ssgir\OneDrive\Desktop\project\Disease outbreak\training_models\parkinson_model'
-}
 
-diabetes_model = pickle.load(open(MODEL_PATHS["Diabetes"], 'rb'))
-heart_disease_model = pickle.load(open(MODEL_PATHS["Heart Disease"], 'rb'))
-parkinsons_model = pickle.load(open(MODEL_PATHS["Parkinson’s"], 'rb'))
+
+diabetes_model = pickle.load(open(f'{working_dir}/trained_models/diabetes_model.sav', 'rb'))
+heart_disease_model = pickle.load(open(f'{working_dir}/trained_models/heart_disease_model.sav', 'rb'))
+parkinsons_model = pickle.load(open(f'{working_dir}/trained_models/parkinson_model.sav', 'rb'))
+
 
 # Sidebar Navigation
 with st.sidebar:
