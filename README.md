@@ -1,4 +1,6 @@
+
 # Disease Outbreak Prediction System 🏥
+
 
 ## 📌 Overview
 The **Disease Outbreak Prediction System** is a Machine Learning-powered web application designed to predict the likelihood of three major diseases: **Diabetes, Heart Disease, and Parkinson's Disease**. The system enables users to assess potential health risks by inputting relevant medical parameters. It employs pre-trained ML models and is built using **Streamlit** for an interactive and user-friendly interface.
